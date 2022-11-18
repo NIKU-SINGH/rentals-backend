@@ -14,6 +14,7 @@ dotenv.config();
 
 connection();
 
+
 // Middlewares
 app.use(cors());
 app.use(cookieParser());
