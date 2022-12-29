@@ -49,7 +49,8 @@ const HotelSchema = new Schema({
     featured: {
         type: Boolean,
         defaut: false,
-    }
+    },
 })
+HotelSchema.index({city:"text"})
 
 export default mongoose.model('Hotel',HotelSchema);

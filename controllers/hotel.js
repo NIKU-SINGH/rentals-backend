@@ -37,6 +37,16 @@ export const getHotel = async (req, res, next) => {
         next(err);
     }
 }
+
+export const searchHotel = async (req,res,next) => {
+    try{
+        const hotel = await Hotel.find({$text:{$search:req.params.search}})
+        res.status(200).json(hotel)
+    }catch(err){
+        next(err);
+    }
+}
+
 export const getAllHotel = async (req, res, next) => {
     const { min, max, ...others } = req.query;
     try {
